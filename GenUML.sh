@@ -3,6 +3,9 @@
 # plantuml.jar 路径
 pathPUMLJar="D:\\tools\\plantuml.jar"
 
+# include 搜索路径
+searchPath="D:\\tools\\plantuml-style-c4"
+
 # 变量目录 生成 UML PNG
 function GenerateUMLPng() {
     # $1 当前遍历的目录
@@ -17,7 +20,7 @@ function GenerateUMLPng() {
             # 为 puml 文件
             echo $absolutePath
             # 生成 UML PNG
-            java -jar $pathPUMLJar -charset UTF-8 $absolutePath
+            java -Dplantuml.include.path=$searchPath -jar $pathPUMLJar -charset UTF-8 $absolutePath
         fi
     done
 }
