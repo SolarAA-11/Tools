@@ -17,7 +17,7 @@ function GenerateUMLPng() {
             # 为 puml 文件
             echo $absolutePath
             # 生成 UML PNG
-            java -jar $pathPUMLJar $absolutePath
+            java -jar $pathPUMLJar -charset UTF-8 $absolutePath
         fi
     done
 }
